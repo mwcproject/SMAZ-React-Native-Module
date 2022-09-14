@@ -1,6 +1,6 @@
 {
 	"name": "@nicolasflamel/smaz-react",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "React Native module for parts of the official SMAZ implementation",
 	"react-native": "src/index",
 	"source": "src/index",
