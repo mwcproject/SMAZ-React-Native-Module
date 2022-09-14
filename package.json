@@ -31,7 +31,7 @@
 	"bugs": {
 		"url": "https://github.com/NicolasFlamel1/SMAZ-React-Native-Module/issues"
 	},
-	"homepage": "https://github.com/NicolasFlamel1/SMAZ-React-Native-Module",
+	"homepage": "https://github.com/NicolasFlamel1/SMAZ-React-Native-Module#readme",
 	"devDependencies": {
 		"@types/react": "~17.0.21",
 		"@types/react-native": "0.68.0",
