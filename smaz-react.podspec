@@ -16,6 +16,10 @@ Pod::Spec.new do |s|
 
   s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{h,cpp}", "smaz-master/**/*.{h,c}"
 
+  s.pod_target_xcconfig = {
+    "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)/smaz-master\""
+  }
+
   s.dependency "React-Core"
 
   # Don't install the dependencies when we run `pod install` in the old architecture.
