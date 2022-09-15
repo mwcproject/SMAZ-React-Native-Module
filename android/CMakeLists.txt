@@ -10,7 +10,6 @@ add_library(cpp
             ../smaz-master/smaz.c
 )
 
-# Specifies a path to native header files.
 include_directories(
             ../cpp
             ../smaz-master

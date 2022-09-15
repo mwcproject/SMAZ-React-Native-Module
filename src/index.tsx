@@ -6,7 +6,7 @@ import { Buffer } from "buffer";
 // Constants
 
 // Linking error
-const LINKING_ERROR = "The package 'smaz-react' doesn't seem to be linked. Make sure: \n\n" + Platform.select({ ios: "- You have run 'pod install'\n", default: "" }) + "- You rebuilt the app after installing the package\n- You are not using Expo managed workflow\n";
+const LINKING_ERROR = "The package '@nicolasflamel/smaz-react' doesn't seem to be linked. Make sure: \n\n" + Platform.select({ ios: "- You have run 'pod install'\n", default: "" }) + "- You rebuilt the app after installing the package\n- You are not using Expo managed workflow\n";
 
 // SMAZ React
 const SmazReact = NativeModules.SmazReact ? NativeModules.SmazReact : new Proxy({}, {

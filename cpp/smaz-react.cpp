@@ -1,6 +1,12 @@
 // Header files
 #include "./smaz-react.h"
-#include "../SMAZ-WASM-Wrapper-master/main.cpp"
+
+// SMAZ namespace
+namespace Smaz {
+
+	// Header files
+	#include "../SMAZ-WASM-Wrapper-master/main.cpp"
+}
 
 using namespace std;
 
@@ -11,8 +17,8 @@ using namespace std;
 vector<uint8_t> compress(const uint8_t *input, size_t inputSize) {
 
 	// Check if getting compressed size failed
-	const size_t compressedSize = compressSize(input, inputSize);
-	if(compressedSize == invalidSize()) {
+	const size_t compressedSize = Smaz::compressSize(input, inputSize);
+	if(compressedSize == Smaz::invalidSize()) {
 	
 		// Throw error
 		throw runtime_error("Getting compressed size failed");
@@ -20,7 +26,7 @@ vector<uint8_t> compress(const uint8_t *input, size_t inputSize) {
 	
 	// Check if compressing input failed
 	vector<uint8_t> result(compressedSize);
-	if(!compress(result.data(), result.size(), input, inputSize)) {
+	if(!Smaz::compress(result.data(), result.size(), input, inputSize)) {
 	
 		// Throw error
 		throw runtime_error("Compressing input failed");
@@ -34,8 +40,8 @@ vector<uint8_t> compress(const uint8_t *input, size_t inputSize) {
 vector<uint8_t> decompress(const uint8_t *input, size_t inputSize) {
 
 	// Check if getting decompressed size failed
-	const size_t decompressedSize = decompressSize(input, inputSize);
-	if(decompressedSize == invalidSize()) {
+	const size_t decompressedSize = Smaz::decompressSize(input, inputSize);
+	if(decompressedSize == Smaz::invalidSize()) {
 	
 		// Throw error
 		throw runtime_error("Getting decompressed size failed");
@@ -43,7 +49,7 @@ vector<uint8_t> decompress(const uint8_t *input, size_t inputSize) {
 	
 	// Check if decompressing input failed
 	vector<uint8_t> result(decompressedSize);
-	if(!decompress(result.data(), result.size(), input, inputSize)) {
+	if(!Smaz::decompress(result.data(), result.size(), input, inputSize)) {
 	
 		// Throw error
 		throw runtime_error("Decompressing input failed");

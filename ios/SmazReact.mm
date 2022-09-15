@@ -23,7 +23,7 @@ static const int BITS_IN_A_BYTE = 8;
 static vector<uint8_t> fromHexString(const NSString *hexString);
 
 // To hex string
-static const NSString *toHexString(const vector<uint8_t> &data);
+static const NSString *toHexString(const vector<uint8_t> &input);
 
 // Character to number
 static uint8_t characterToNumber(char character);
@@ -160,7 +160,7 @@ vector<uint8_t> fromHexString(const NSString *hexString) {
 }
 
 // To hex string
-const NSString *toHexString(const vector<uint8_t> &data) {
+const NSString *toHexString(const vector<uint8_t> &input) {
 
 	// Initialize result
 	ostringstream result;
@@ -168,8 +168,8 @@ const NSString *toHexString(const vector<uint8_t> &data) {
 	// Configure result
 	result << hex << setfill('0');
 
-	// Go through all bytes in the data
-	for(const uint8_t byte : data) {
+	// Go through all bytes in the input
+	for(const uint8_t byte : input) {
 
 		// Append byte to result
 		result << setw(HEX_CHARACTER_LENGTH) << static_cast<unsigned>(byte);
