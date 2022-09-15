@@ -27,7 +27,7 @@ public class SmazReactModule extends ReactContextBaseJavaModule {
 		try {
 		
 			// Load library
-			System.loadLibrary("cpp");
+			System.loadLibrary("SmazReact");
 		}
 		
 		// Catch errors
