@@ -3,17 +3,15 @@ import { NativeModules, Platform } from "react-native";
 import { Buffer } from "buffer";
 
 
-// Constants
+// Check if SMAZ React module doesn't exist
+if(!NativeModules.SmazReact) {
 
-// Linking error
-const LINKING_ERROR = "The package '@nicolasflamel/smaz-react' doesn't seem to be linked. Make sure: \n\n" + Platform.select({ ios: "- You have run 'pod install'\n", default: "" }) + "- You rebuilt the app after installing the package\n- You are not using Expo managed workflow\n";
-
-// SMAZ React
-const SmazReact = NativeModules.SmazReact ? NativeModules.SmazReact : new Proxy({}, {
-	get() {
-		throw new Error(LINKING_ERROR);
-	}
-});
+	// Throw error
+	throw new Error("The package '@nicolasflamel/smaz-react' doesn't seem to be linked. Make sure: \n\n" + Platform.select({
+		ios: "- You have run 'pod install'\n",
+		default: ""
+	}) + "- You rebuilt the app after installing the package\n- You are not using Expo managed workflow\n");
+}
 
 
 // Classes
@@ -32,8 +30,8 @@ export default class Smaz {
 		// Try
 		try {
 	
-			// Return compressing input
-			return Buffer.from(await SmazReact.compress(input.toString("hex")), "hex");
+			// Return compressing input with SMAZ React module
+			return Buffer.from(await NativeModules.SmazReact.compress(input.toString("hex")), "hex");
 		}
 		
 		// Catch errors
@@ -54,8 +52,8 @@ export default class Smaz {
 		// Try
 		try {
 	
-			// Return decompressing input
-			return Buffer.from(await SmazReact.decompress(input.toString("hex")), "hex");
+			// Return decompressing input with SMAZ React module
+			return Buffer.from(await NativeModules.SmazReact.decompress(input.toString("hex")), "hex");
 		}
 		
 		// Catch errors

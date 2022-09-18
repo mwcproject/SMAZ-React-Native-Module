@@ -5,7 +5,7 @@
 namespace Smaz {
 
 	// Header files
-	#include "../SMAZ-WASM-Wrapper-master/main.cpp"
+	#include "../SMAZ-NPM-Package-master/main.cpp"
 }
 
 using namespace std;
