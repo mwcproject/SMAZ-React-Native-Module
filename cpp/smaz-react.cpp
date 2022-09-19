@@ -1,14 +1,15 @@
 // Header files
 #include "./smaz-react.h"
 
+using namespace std;
+
+
 // SMAZ namespace
 namespace Smaz {
 
 	// Header files
 	#include "../SMAZ-NPM-Package-master/main.cpp"
 }
-
-using namespace std;
 
 
 // Supporting function implementation
