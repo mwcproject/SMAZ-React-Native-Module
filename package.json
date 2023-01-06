@@ -1,6 +1,6 @@
 {
 	"name": "@nicolasflamel/smaz-react",
-	"version": "0.0.11",
+	"version": "0.0.12",
 	"description": "React Native module for parts of the official SMAZ implementation",
 	"react-native": "src/index",
 	"source": "src/index",
@@ -17,7 +17,7 @@
 		"typescript": "tsc --noEmit",
 		"prepare": "bob build",
 		"bootstrap": "yarn",
-		"prepublishOnly": "wget \"https://github.com/antirez/smaz/archive/master.zip\" && unzip \"./master.zip\" && rm \"./master.zip\" && find \"./smaz-master/\" -mindepth 1 ! -name \"smaz.c\" ! -name \"smaz.h\" -exec rm -rf {} + && wget \"https://github.com/NicolasFlamel1/SMAZ-NPM-Package/archive/refs/heads/master.zip\" && unzip \"./master.zip\" && rm \"./master.zip\" && sed -i 's/explicit_bzero(\\(.*\\),/memset(\\1, 0,/g' \"./SMAZ-NPM-Package-master/main.cpp\" && find \"./SMAZ-NPM-Package-master/\" -mindepth 1 ! -name \"main.cpp\" -exec rm -rf {} +"
+		"prepublishOnly": "wget \"https://github.com/antirez/smaz/archive/master.zip\" && unzip \"./master.zip\" && rm \"./master.zip\" && find \"./smaz-master/\" -mindepth 1 ! -name \"smaz.c\" ! -name \"smaz.h\" -exec rm -rf {} + && wget \"https://github.com/NicolasFlamel1/SMAZ-NPM-Package/archive/refs/heads/master.zip\" && unzip \"./master.zip\" && rm \"./master.zip\" && patch \"./smaz-master/smaz.c\" < \"./SMAZ-NPM-Package-master/smaz.c.diff\" && sed -i 's/explicit_bzero(\\(.*\\),/memset(\\1, 0,/g' \"./SMAZ-NPM-Package-master/main.cpp\" && find \"./SMAZ-NPM-Package-master/\" -mindepth 1 ! -name \"main.cpp\" -exec rm -rf {} +"
 	},
 	"repository": {
 		"type": "git",
