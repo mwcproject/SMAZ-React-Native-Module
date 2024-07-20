@@ -1,5 +1,5 @@
 {
-	"name": "@nicolasflamel/smaz-react",
+	"name": "@mwcproject/smaz-react",
 	"version": "0.0.12",
 	"description": "React Native module for parts of the official SMAZ implementation",
 	"react-native": "src/index",
@@ -21,7 +21,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/NicolasFlamel1/SMAZ-React-Native-Module.git"
+		"url": "git+https://github.com/mwcproject/SMAZ-React-Native-Module.git"
 	},
 	"keywords": [
 		"SMAZ"
@@ -29,9 +29,9 @@
 	"author": "Nicolas Flamel",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/NicolasFlamel1/SMAZ-React-Native-Module/issues"
+		"url": "https://github.com/mwcproject/SMAZ-React-Native-Module/issues"
 	},
-	"homepage": "https://github.com/NicolasFlamel1/SMAZ-React-Native-Module#readme",
+	"homepage": "https://github.com/mwcproject/SMAZ-React-Native-Module#readme",
 	"devDependencies": {
 		"@types/react": "~17.0.21",
 		"@types/react-native": "0.68.0",
